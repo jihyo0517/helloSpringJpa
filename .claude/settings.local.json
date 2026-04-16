@@ -4,7 +4,14 @@
       "Bash(docker exec:*)",
       "Bash(mvn clean:*)",
       "WebFetch(domain:localhost)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(mvn --version)",
+      "Bash(echo \"---EXIT:$?\")",
+      "Bash(mvn compile:*)",
+      "Bash(mvn test:*)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git reset *)"
     ]
   }
 }
