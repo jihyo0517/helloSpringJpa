@@ -36,6 +36,7 @@
         .hint { font-size: 0.85em; color: #6c757d; margin-top: 4px; }
         .required { color: #e74c3c; }
         .editing-badge { display: inline-block; background: #e67e22; color: white; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; margin-left: 8px; vertical-align: middle; }
+        footer { margin-top: 40px; padding: 12px 0; border-top: 1px solid #ddd; text-align: center; font-size: 0.85em; color: #666; }
     </style>
 </head>
 <body>
@@ -133,6 +134,10 @@
         </div>
 
     </form>
+
+    <footer>
+        <p th:text="${'실습 수행 일시: ' + #temporals.format(#temporals.createNow(), 'yyyy년 MM월 dd일 (EEE) HH:mm:ss') + ' | 학번: 1971359 | 성명: 김지효'}">실습 수행 일시</p>
+    </footer>
 
 </body>
 </html>

@@ -27,6 +27,7 @@
         .btn:hover { background: #357abd; }
         .btn-gray { background: #6c757d; }
         .btn-gray:hover { background: #545b62; }
+        footer { margin-top: 40px; padding: 12px 0; border-top: 1px solid #ddd; text-align: center; font-size: 0.85em; color: #666; }
     </style>
 </head>
 <body>
@@ -55,6 +56,10 @@
     </div>
 
     <a class="btn" th:href="@{/products}">← 상품 목록으로 돌아가기</a>
+
+    <footer>
+        <p th:text="${'실습 수행 일시: ' + #temporals.format(#temporals.createNow(), 'yyyy년 MM월 dd일 (EEE) HH:mm:ss') + ' | 학번: 1971359 | 성명: 김지효'}">실습 수행 일시</p>
+    </footer>
 
 </body>
 </html>

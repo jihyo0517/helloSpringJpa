@@ -15,11 +15,11 @@ package kr.ac.hansung.cse.exception;
  *
  * [RuntimeException vs Exception (검사 예외 vs 비검사 예외)]
  * ┌───────────────────┬──────────────────┬──────────────────────────────┐
- * │ 구분              │ RuntimeException │ Exception (검사 예외)         │
+ * │ 구분               │ RuntimeException │ Exception (검사 예외)         │
  * ├───────────────────┼──────────────────┼──────────────────────────────┤
- * │ try-catch 강제    │ 아니오           │ 예 (컴파일 오류)              │
- * │ 트랜잭션 롤백     │ 자동 롤백        │ 수동 설정 필요               │
- * │ Spring 관례       │ 주로 사용        │ IOException 등 인프라 예외   │
+ * │ try-catch 강제    │ 아니오             │ 예 (컴파일 오류)               │
+ * │ 트랜잭션 롤백       │ 자동 롤백          │ 수동 설정 필요                 │
+ * │ Spring 관례       │ 주로 사용          │ IOException 등 인프라 예       │
  * └───────────────────┴──────────────────┴──────────────────────────────┘
  * → Spring 프로젝트에서는 RuntimeException 계열을 주로 사용합니다.
  */

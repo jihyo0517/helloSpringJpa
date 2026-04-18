@@ -28,6 +28,7 @@
         .btn-edit:hover { background: #ca6f1e; }
         .btn-delete { background: #e74c3c; color: white; border: none; padding: 10px 24px; font-size: 1em; border-radius: 4px; cursor: pointer; }
         .btn-delete:hover { background: #c0392b; }
+        footer { margin-top: 40px; padding: 12px 0; border-top: 1px solid #ddd; text-align: center; font-size: 0.85em; color: #666; }
     </style>
 </head>
 <body>
@@ -101,6 +102,10 @@
             <button type="submit" class="btn-delete">삭제</button>
         </form>
     </div>
+
+    <footer>
+        <p th:text="${'실습 수행 일시: ' + #temporals.format(#temporals.createNow(), 'yyyy년 MM월 dd일 (EEE) HH:mm:ss') + ' | 학번: 1971359 | 성명: 김지효'}">실습 수행 일시</p>
+    </footer>
 
 </body>
 </html>
