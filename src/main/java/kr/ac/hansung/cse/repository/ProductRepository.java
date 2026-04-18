@@ -89,15 +89,15 @@ public class ProductRepository {
                 .getResultList();
         return result.isEmpty() ? Optional.empty() : Optional.of(result.get(0));
     }
-
-    List<Product> findByNameContaining(String keyword) {
+    // 상품 (이름)검색기능: 카테고리가 레이지로딩이므로 뷰에서 카테고리에 접근할떄 발생할 수 있는 n+1문제 해결을 위해 leftjoinfetch 사용
+    public List<Product> findByNameContaining(String keyword) {
         return entityManager.createQuery(
                         "SELECT p FROM Product p LEFT JOIN FETCH p.category WHERE p.name LIKE :keyword", Product.class)
                 .setParameter("keyword", "%" + keyword + "%")
                 .getResultList();
     }
-
-    List<Product> findByCategoryId(Long categoryId){
+    // 상품 (카테고리)검색기능: 카테고리가 레이지로딩이므로 뷰에서 카테고리에 접근할떄 발생할 수 있는 n+1문제 해결을 위해 leftjoinfetch 사용
+    public List<Product> findByCategoryId(Long categoryId){
         return entityManager.createQuery(
         "SELECT p FROM Product p LEFT JOIN FETCH p.category WHERE p.category.id = :categoryId", Product.class)
           .setParameter("categoryId", categoryId)

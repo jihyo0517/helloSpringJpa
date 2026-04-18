@@ -126,6 +126,10 @@ public class ProductService {
         return productRepository.update(product);
     }
 
+    public List<Product> searchByName(String keyword) {
+        return productRepository.findByNameContaining(keyword); }
+    public List<Product> searchByCategory(Long categoryId) {
+        return productRepository.findByCategoryId(categoryId); }
     /**
      * 상품 삭제
      */
