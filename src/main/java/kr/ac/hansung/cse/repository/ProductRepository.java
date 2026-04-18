@@ -90,6 +90,20 @@ public class ProductRepository {
         return result.isEmpty() ? Optional.empty() : Optional.of(result.get(0));
     }
 
+    List<Product> findByNameContaining(String keyword) {
+        return entityManager.createQuery(
+                        "SELECT p FROM Product p LEFT JOIN FETCH p.category WHERE p.name LIKE :keyword", Product.class)
+                .setParameter("keyword", "%" + keyword + "%")
+                .getResultList();
+    }
+
+    List<Product> findByCategoryId(Long categoryId){
+        return entityManager.createQuery(
+        "SELECT p FROM Product p LEFT JOIN FETCH p.category WHERE p.category.id = :categoryId", Product.class)
+          .setParameter("categoryId", categoryId)
+                .getResultList();
+    }
+
     /**
      * 상품 저장 (신규 생성)
      *
